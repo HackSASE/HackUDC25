@@ -1,0 +1,64 @@
+/*
+    Proyecto: Registro de Competencias
+    Autor: SASE
+    Licencia: GPL-3.0
+    © 2025
+    Este programa es software libre: puedes redistribuirlo y/o modificarlo
+    bajo los términos de la Licencia Pública General de GNU.
+*/
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Competencias</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="intro" class="intro">
+    <h1>¡Bienvenido a la Plataforma de Registro!</h1>
+    <p>Registra y consulta competencias técnicas de manera fácil y rápida.</p>
+    <button onclick="iniciarPagina()">Empezar</button>
+
+  </div>
+  <div id="main-content" class="oculto">
+    <!-- Línea negra con el título -->
+    <div class="linea-negra">
+      <h1>• Registro de Competencias Digitales •</h1>
+    </div>
+
+    <!-- Contenedor de registro -->
+    <div class="contenedor-principal">
+      <!-- Sección izquierda -->
+      <div class="seccion-izquierda">
+        <div class="contenedor">
+          <h2>Registrar Persona</h2>
+          <input type="text" id="nombre" placeholder="Nombre">
+          <input type="text" id="competencias" placeholder="Competencias (separadas por comas)">
+          <button class="registrar" onclick="registrarPersona()">Registrar</button>
+        </div>
+    
+        <div class="contenedor">
+          <h2>Consultar Competencias</h2>
+          <input type="text" id="buscar" placeholder="Buscar competencia">
+          <button class="buscar" onclick="consultarCompetencias()">Buscar</button>
+        </div>
+      </div>
+    
+      <!-- Sección derecha -->
+      <div class="seccion-derecha">
+        <div class="contenedor resultados">
+          <h3>Resultados:</h3>
+          <ul id="resultados"></ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

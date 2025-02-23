@@ -1,0 +1,265 @@
+/*
+    Proyecto: Registro de Competencias
+    Autor: SASE
+    Licencia: GPL-3.0
+    © 2025
+    Este programa es software libre: puedes redistribuirlo y/o modificarlo
+    bajo los términos de la Licencia Pública General de GNU.
+*/
+
+
+/* Estilos generales */
+body {
+  background-color: #aac9ee; /* Gris suave */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+/* Sección de introducción */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+}
+
+/* Botón de la introducción */
+.intro button {
+  background: white;
+  color: #007bff;
+  font-size: 20px; /* Tamaño de la fuente más pequeño */
+  padding: 6px 12px; /* Menos padding para que el botón sea más pequeño */
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 150px; /* Define un ancho fijo para hacerlo más estrecho */
+  text-align: center; /* Centra el texto */
+}
+
+.intro button:hover {
+  background: #0056b3;
+  color: white;
+}
+
+/* Ocultar el contenido principal al inicio */
+#main-content {
+  display: none;
+}
+
+
+/* Línea negra con el título */
+.linea-negra {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgb(47, 47, 47);
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+#main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px; /* Para separar del título */
+}
+
+/* Tarjetas flotantes */
+.contenedor {
+
+  background: rgb(107, 164, 230); /* Fondo translúcido */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  margin-top: 20px;
+  margin:20px auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el mouse sobre las tarjetas */
+.contenedor:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos dentro de las tarjetas */
+h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+h3 {
+  color: #630000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Campos de entrada */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  background-color: #e0f7fa;
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+}
+button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+  transform: scale(1.1);
+}
+
+/* Estilo de los botones */
+button {
+  width: 95%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botón para agregar registros */
+button.registrar {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+button.registrar:hover {
+  background: linear-gradient(135deg, #0056b3, #004094);
+  transform: scale(1.05);
+}
+
+/* Botón para buscar */
+button.buscar {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+}
+
+button.buscar:hover {
+  background: linear-gradient(135deg, #0056b3, #004094);
+  transform: scale(1.05);
+}
+
+/* Botón rojo para eliminar */
+button.btn-eliminar {
+  background: linear-gradient(135deg, #ff4d4d, #cc0000);
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+button.btn-eliminar:hover {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  transform: scale(1.05);
+}
+
+/* Lista de resultados */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  margin: 5px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  transition: 0.3s;
+}
+
+ul li:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  animation: cambioDeFondo 10s ease-in-out infinite; /* Cambia el fondo cada 10 segundos */
+  color: white;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+/* Contenedor principal en filas */
+.contenedor-principal {
+  display: flex;
+  justify-content: space-between; /* Espacio entre columnas */
+  align-items: flex-start; /* Alinea al inicio */
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 20px;
+}
+
+/* Sección izquierda (formularios) */
+.seccion-izquierda {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre cajas */
+}
+
+/* Sección derecha (resultados) */
+.seccion-derecha {
+  width: 55%;
+}
+
+/* Caja de resultados más grande */
+.resultados {
+  min-height: 300px;
+  padding: 20px;
+}
